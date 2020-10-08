@@ -1,0 +1,31 @@
+header{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#flashcard {
+    width: 80vw;
+    height: 80vw;
+
+}
+
+#main-container{
+    display: flex;
+    justify-content: center;
+}
+
+#card-controls-container{
+    display: flex;
+    justify-content: center;
+}
