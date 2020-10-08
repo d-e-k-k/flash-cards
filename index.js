@@ -7,9 +7,6 @@
 //     //show the content of each side
 // }
 
-// function removeCardFromCycle{
-//     // remove card from cycle
-// }
 
 // function createNewCardStack{
 //     //makes a new set of cards
@@ -25,8 +22,13 @@ const gotItButton = document.querySelector('#got-it-button');
 
 let titles = ['title1', 'title2', 'title3', 'title4'];
 let defs = ['def1', 'def2', 'def3', 'def4'];
+let completedTitles = [];
+let completedDefs = [];
 let cardIndex = 0;
+let completionCount = document.querySelector('#completion-count')
+let startingAmountOfCards = document.querySelector('#starting-amount-of-cards')
 
+startingAmountOfCards.innerText = titles.length
 
 
 window.addEventListener('load',() => {
@@ -46,11 +48,34 @@ nextButton.addEventListener('click', () => {
 })
 
 gotItButton.addEventListener('click', () => {
+    if (titles.length > 0){
+        addOneToCompletionCountIfCardsLeft();
+        addCardToCompletedCardsArray();
+        removeCardUserKnows();
+        loadCardContent();
+        console.log(completedTitles);
+    }else{
+        console.log('no more cards left');
+    }
+})
+
+function removeCardUserKnows(){
     titles.splice(cardIndex, 1);
     defs.splice(cardIndex, 1);
-    loadCardContent();
-    console.log(titles);
-})
+    if(cardIndex === titles.length){
+        cardIndex -= 1
+    }
+}
+
+function addCardToCompletedCardsArray(){
+    completedTitles.push(titles[cardIndex]);
+    completedDefs.push(defs[cardIndex]);
+}
+
+function addOneToCompletionCountIfCardsLeft(){
+    completionCount.innerText = Number(completionCount.innerText) + 1;
+    
+}
 
 previousButton.addEventListener('click', () => {
     if(cardIndex > 0){
@@ -58,6 +83,7 @@ previousButton.addEventListener('click', () => {
         loadCardContent();
     }
 })
+
 
 
 function showDef(){
