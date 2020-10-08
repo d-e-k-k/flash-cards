@@ -1,0 +1,20 @@
+#User Stories
+#Flash-Cards Application
+#Author: d-e-k-k
+
+MVP  GOALS
+    • As a user,  I would like flash cards that flip front and back so I can test my self and only reveal definitions when I need them.
+    • As a user, I want to click on the cards to have them flip as well as use the arrow keys so I can move through the cards and flip them quickly.
+    • As a user, I would like some pre-loaded cards so I do not have to create content if I don't want to.
+    • As a user, I want to be able to mark which cards I got right so I know which cards I am struggling with.
+    • As a user, I would like cards that I don’t know to re-display until I get them right so that I can be confident I know the material. 
+
+STRETCH GOALS
+Bronze 
+    • As a user , I would like to be able to load random vocabulary flashcards so I can study a new set each time
+Silver
+    • As a user, I would like to be able to make my own flash cards so I can study what I want
+    • As a user, I would like a help Icon so if I get confuse I can click on it for incrustations 
+    • As a user, I would like to be able to load cards from different categories so I can narrow down my studying with out being forced to create all the cards myself.
+Gold
+    • As a user, I would like a screen that lets me select card different card categories and options so that the interface is intuitive and good looking
