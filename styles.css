@@ -20,6 +20,12 @@ nav a {
 
 }
 
+ul {
+    list-style: none;
+}
+
+
+
 #main-container{
     display: flex;
     justify-content: center;
@@ -28,4 +34,8 @@ nav a {
 #card-controls-container{
     display: flex;
     justify-content: center;
+}
+
+.hidden {
+    display: none;
 }
