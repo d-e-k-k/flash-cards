@@ -34,8 +34,18 @@
     </header>
     <main>
         <!-- <button id="random-vocab-button">Random Vocab</button> -->
+        <div id="create-card-modal">
+            <form id="create-card-form">
+                <input type="text" placeholder="Enter Card Title Here">
+                <input type="text" placeholder="Enter Definition Here">
+                <input type="submit">
+            </form>
+        </div>
+        <p>t</p>
+        <p>t</p>
+        <p>t</p>
         <form id="add-word-form">
-            <input type="text" placeholder="Please type a word here!">
+            <input type="text" placeholder="Please type a word here!" id="add-word-input">
             <input  type="submit">
         </form>
         <h3><span id="completion-count">0</span> / <span id="starting-amount-of-cards"></span> Complete</h3>
@@ -52,12 +62,12 @@
             <button id="next-button">></button>
         </div>
 
-    <div class="modal" id="create-your-own-cards-modal">
-    </div>
     </main>
     <footer>
 
     </footer>
+
+<script src="./create-card.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

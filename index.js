@@ -2,8 +2,9 @@ const flashcard = document.querySelector('#flashcard');
 const nextButton = document.querySelector('#next-button');
 const previousButton = document.querySelector('#previous-button');
 const gotItButton = document.querySelector('#got-it-button');
-const input = document.querySelector('input[type=text]');
+const addWordInput = document.querySelector('#add-word-input');
 // const randomVocabButton = document.querySelector('#random-vocab-button');
+// https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=10&api_key=YOURAPIKEY
 const addWordForm = document.querySelector('#add-word-form');
 
 
@@ -23,17 +24,18 @@ startingAmountOfCards.innerText = titles.length + completedTitles.length
 window.addEventListener('load',() => {
     loadCardContent();
 } )
-console.log(addWordForm);
+
 addWordForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const url = `https://www.dictionaryapi.com/api/v3/references/learners/json/${input.value}?key=a10c76fe-97c7-4347-97ed-43c0201e71e9`;
+    const url = `https://www.dictionaryapi.com/api/v3/references/learners/json/${addWordInput.value}?key=a10c76fe-97c7-4347-97ed-43c0201e71e9`;
 	fetch(url)
     .then(res => res.json())
 	.then(resJson => {
         titles.push(resJson[0].meta.stems[0]);
         defs.push(resJson[0].meta['app-shortdef'].def[0]);
         startingAmountOfCards.innerText =
-					titles.length + completedTitles.length;
+                    titles.length + completedTitles.length;
+        console.log(resJson[0]);
     })
     
 });
