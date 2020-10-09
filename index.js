@@ -127,3 +127,14 @@ function nextCard(){
 function previousCard(){
     cardIndex -= 1;
 }
+
+// Hamberger Menu ###START####
+const hamburgerMenu = document.querySelector('#menu');
+function toggleHamburgerMenu(){
+    hamburgerMenu.classList.toggle("expanded-hamburger-menu")
+}
+hamburgerMenu.addEventListener('click', () => {
+    toggleHamburgerMenu();
+    // console.log(hamburgerMenu);
+})
+// Hamberger Menu ###END###
