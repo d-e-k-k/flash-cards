@@ -18,15 +18,12 @@ const cards = [
 	},
 ];
 
-let titles = ['title1', 'title2', 'title3', 'title4'];
-let defs = ['def1', 'def2', 'def3', 'def4'];
-let completedTitles = [];
-let completedDefs = [];
+
 let cardIndex = 0;
 let completionCount = document.querySelector('#completion-count')
-let startingAmountOfCards = document.querySelector('#starting-amount-of-cards')
+let totalNumberOfCards = document.querySelector('#total-number-of-cards')
 
-startingAmountOfCards.innerText = cards.length;
+totalNumberOfCards.innerText = cards.length;
 
 
 
@@ -34,7 +31,7 @@ window.addEventListener('load',() => {
     loadCardContent();
 } )
 function updateTotalAmountOfCards(){
-    startingAmountOfCards.innerText = titles.length + completedTitles.length;
+    totalNumberOfCards.innerText = cards.length;
 }
 
 addWordForm.addEventListener('submit', (event) => {

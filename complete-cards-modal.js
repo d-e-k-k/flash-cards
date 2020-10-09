@@ -6,12 +6,9 @@ let cardListOpen = false;
 seeAllCardsButton.addEventListener('click', () => {
     cardListUl.innerHTML = "";
     if(cardListOpen === false){
-        let allTitles = titles.concat(completedTitles);
-        let allDefs = defs.concat(completedDefs);
-        console.log(allTitles);
-        allTitles.forEach((title, i) => {
+        cards.forEach((card, i) => {
             const liCardTitle = document.createElement('li');
-            liCardTitle.innerText = allTitles[i];
+            liCardTitle.innerText = cards[i].title;
             cardListUl.appendChild(liCardTitle);
             return cardListOpen = true;
         })
