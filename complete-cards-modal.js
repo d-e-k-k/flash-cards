@@ -1,6 +1,8 @@
 const seeAllCardsButton = document.querySelector('#see-all-cards-button');
 const cardListUl = document.querySelector('#cards-list-ul');
 let cardListOpen = false;
+
+
 seeAllCardsButton.addEventListener('click', () => {
     cardListUl.innerHTML = "";
     if(cardListOpen === false){

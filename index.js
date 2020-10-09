@@ -7,7 +7,16 @@ const addWordInput = document.querySelector('#add-word-input');
 // https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=10&api_key=YOURAPIKEY
 const addWordForm = document.querySelector('#add-word-form');
 
-
+const cards = [
+	{
+		title: 'title1',
+		def: 'def1',
+	},
+	{
+		title: 'title2',
+		def: 'def2',
+	},
+];
 
 let titles = ['title1', 'title2', 'title3', 'title4'];
 let defs = ['def1', 'def2', 'def3', 'def4'];
@@ -17,7 +26,7 @@ let cardIndex = 0;
 let completionCount = document.querySelector('#completion-count')
 let startingAmountOfCards = document.querySelector('#starting-amount-of-cards')
 
-startingAmountOfCards.innerText = titles.length + completedTitles.length
+startingAmountOfCards.innerText = cards.length;
 
 
 
@@ -34,8 +43,10 @@ addWordForm.addEventListener('submit', (event) => {
 	fetch(url)
     .then(res => res.json())
 	.then(resJson => {
-        titles.push(resJson[0].meta.stems[0]);
-        defs.push(resJson[0].meta['app-shortdef'].def[0]);
+        cards.push({
+            title: resJson[0].meta.stems[0],
+            def: resJson[0].meta['app-shortdef'].def[0],
+        })
         updateTotalAmountOfCards();
     })
     
@@ -118,8 +129,8 @@ function loadCardContent(){
     flashcardUl.appendChild(li);
     li.append(flashcardTitle, flashcardDef);
 
-    flashcardTitle.innerText = titles[cardIndex];
-    flashcardDef.innerText = defs[cardIndex];
+    flashcardTitle.innerText = cards[cardIndex].title;
+    flashcardDef.innerText = cards[cardIndex].def;
     flashcardDef.classList.add('hidden', 'def');
 }
 

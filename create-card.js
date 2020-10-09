@@ -17,8 +17,10 @@ createCardForm.addEventListener('submit', (event) => {
     }else if(newCardDef.value === ''){
         console.log('Card is missing a definition. Please add a definition');
     }else{
-        titles.push(newCardTitle.value);
-        defs.push(newCardDef.value);
+        cards.push({
+            title: newCardTitle.value,
+            def: newCardDef.value,
+            });
         updateTotalAmountOfCards();
     }
 })
