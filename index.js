@@ -24,6 +24,9 @@ startingAmountOfCards.innerText = titles.length + completedTitles.length
 window.addEventListener('load',() => {
     loadCardContent();
 } )
+function updateTotalAmountOfCards(){
+    startingAmountOfCards.innerText = titles.length + completedTitles.length;
+}
 
 addWordForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -33,9 +36,7 @@ addWordForm.addEventListener('submit', (event) => {
 	.then(resJson => {
         titles.push(resJson[0].meta.stems[0]);
         defs.push(resJson[0].meta['app-shortdef'].def[0]);
-        startingAmountOfCards.innerText =
-                    titles.length + completedTitles.length;
-        console.log(resJson[0]);
+        updateTotalAmountOfCards();
     })
     
 });

@@ -7,8 +7,18 @@
 // forum with two input boxes and one submit 
 
 const createCardForm = document.querySelector('#create-card-form');
+const newCardTitle = document.querySelector('#new-card-title');
+const newCardDef = document.querySelector('#new-card-def');
 
 createCardForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(event.target);
+    if(newCardTitle.value === ''){
+        console.log('Card Title is missing. Please add a title');
+    }else if(newCardDef.value === ''){
+        console.log('Card is missing a definition. Please add a definition');
+    }else{
+        titles.push(newCardTitle.value);
+        defs.push(newCardDef.value);
+        updateTotalAmountOfCards();
+    }
 })
