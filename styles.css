@@ -13,8 +13,34 @@ html, body {
     margin-left: 85vw;
     margin-top: -50px;
     position: relative;
+    z-index: 2;
 }
 
+
+#menu-options ul{
+    margin-top: 70px;
+    list-style: none;
+    padding-left: 0;
+
+    
+}
+
+#menu-options li{
+    line-height: 70px;
+    text-align: center;
+    font-size: 26px;
+    border-bottom:solid 1px black;
+}
+
+#menu-options a{
+    text-decoration: none;
+    color: black;
+     color: white;
+}
+
+#menu-options a:hover{
+    font-weight: bold;
+}
 
 .bar{
     height: 5px;
@@ -25,7 +51,7 @@ html, body {
     transition: 0.3s ease;
 }
 
-
+/* Attribution: Caler Edwards https://www.youtube.com/watch?v=xMTs8tAapnQ */
 #bar1{
     transform: translateY(-4px);
 }
@@ -46,18 +72,7 @@ html, body {
     transform: rotate(45deg) translateY(-7px);
 }
 
-ul {
-    list-style: none;
-}
 
-nav li {
- margin: 0 20px;
- padding: 20px 0;    
-}
-
-nav li:hover{
-    font-weight: bold;
-}
 
 
 
@@ -97,3 +112,20 @@ nav a {
 .hidden {
     display: none;
 }
+
+ul li{
+    list-style: none;
+}
+
+/* Menu Modal START */
+#menu-options-modal{
+    background-color: rgba(107, 107, 107);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;
+}
+/* Menu Modal END */

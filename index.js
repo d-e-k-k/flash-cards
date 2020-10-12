@@ -147,8 +147,10 @@ do{
 
 // Hamberger Menu ###START####
 const hamburgerMenu = document.querySelector('#menu');
+const menuOptionsModal = document.querySelector("#menu-options-modal");
 function toggleHamburgerMenu(){
     hamburgerMenu.classList.toggle("expanded-hamburger-menu")
+    menuOptionsModal.classList.toggle("hidden")
 }
 hamburgerMenu.addEventListener('click', () => {
     toggleHamburgerMenu();
