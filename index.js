@@ -20,6 +20,8 @@ const cards = [
 	},
 ];
 
+// let completedCards = []
+
 
 let cardIndex = 0;
 let completionCount = document.querySelector('#completion-count')
@@ -45,6 +47,7 @@ addWordForm.addEventListener('submit', (event) => {
         cards.push({
             title: resJson[0].meta.stems[0],
             def: resJson[0].meta['app-shortdef'].def[0],
+            completed: false,
         })
         updateTotalAmountOfCards();
     })
@@ -69,28 +72,40 @@ nextButton.addEventListener('click', () => {
         moveToNextUncompletedCard();
         loadCardContent();
     }
+    console.log(cardIndex);
 })
 
 gotItButton.addEventListener('click', () => {
-    const flashcardTitle = document.querySelector('.flashcard-title');
-    if (cards.length > 0){
-        addOneToCompletionCountIfCardsLeft();
-        markCardAsComplete();
-        if(cards.length < 1){
+    console.log('clicked');
+    markCardAsComplete();
+    console.log(cards);
+    checkAmountComplete();
+    // console.log(cardIndex);
+    // if (cards.length > 0){
+    //     addOneToCompletionCountIfCardsLeft();
+    //     markCardAsComplete();
+    //     cards.push(cards.splice(cardIndex, 1)[0])
+    //     // moveToNextUncompletedCard();
+
+    //     if(cards.length < 1){
             
-            return flashcardTitle.innerText = 'No Cards Left';
-        }
-    }else{
-        return flashcardTitle.innerText = "No Cards Left";
-    }
-    loadCardContent();
+    //         return flashcardTitle.innerText = 'No Cards Left';
+    //     }
+    // }else{
+    //     return flashcardTitle.innerText = "No Cards Left";
+    // }
+    // loadCardContent();
 })
 
 function markCardAsComplete(){
     cards[cardIndex].completed = true;
 }
 
-
+function checkAmountComplete(){
+    cards.forEach((card, i) =>{
+        console.log("true" + i);
+    })
+}
 function addOneToCompletionCountIfCardsLeft(){
     completionCount.innerText = Number(completionCount.innerText) + 1;
     
@@ -99,7 +114,9 @@ function addOneToCompletionCountIfCardsLeft(){
 previousButton.addEventListener('click', () => {
     if(cardIndex > 0){
         moveToPreviousUncompletedCard();
+        loadCardContent();
     }
+    console.log(cardIndex);
 })
 
 
@@ -133,26 +150,22 @@ function loadCardContent(){
 // }
 
 function moveToNextUncompletedCard(){
-    if (cards[cardIndex].completed === true || (cards[cardIndex + 1].completed === true)){
-        cardIndex += 1;
-        moveToNextUncompletedCard();
-    }else{
-        cardIndex += 1;
-        loadCardContent();
-    }
+do{
+    cardIndex += 1;
+}while (cards[cardIndex].completed === true);
+    // if (cards[cardIndex].completed === true || (cards[cardIndex + 1].completed === true)){
+    //     cardIndex += 1;
+    //     moveToNextUncompletedCard();
+    // }else{
+    //     cardIndex += 1;
+    //     loadCardContent();
+    // }
 }
 
 function moveToPreviousUncompletedCard() {
-	if (
-		cards[cardIndex].completed === true ||
-		cards[cardIndex - 1].completed === true
-	) {
-		cardIndex -= 1;
-		moveToNextUncompletedCard();
-	} else {
-		cardIndex -= 1;
-		loadCardContent();
-	}
+do{
+    cardIndex -= 1;
+}while(cards[cardIndex].completed === true);
 }
 
 // Hamberger Menu ###START####

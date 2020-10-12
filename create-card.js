@@ -20,6 +20,7 @@ createCardForm.addEventListener('submit', (event) => {
         cards.push({
             title: newCardTitle.value,
             def: newCardDef.value,
+            completed: false,
             });
         updateTotalAmountOfCards();
     }
