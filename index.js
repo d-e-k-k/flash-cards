@@ -10,11 +10,13 @@ const addWordForm = document.querySelector('#add-word-form');
 const cards = [
 	{
 		title: 'title1',
-		def: 'def1',
+        def: 'def1',
+        completed: false,
 	},
 	{
 		title: 'title2',
-		def: 'def2',
+        def: 'def2',
+        completed: false,
 	},
 ];
 
@@ -63,19 +65,19 @@ flashcard.addEventListener('click', () => {
 })
 
 nextButton.addEventListener('click', () => {
-    if(cardIndex < titles.length -1){
-        nextCard();
+    if(cardIndex < cards.length -1){
+        moveToNextUncompletedCard();
         loadCardContent();
     }
 })
 
 gotItButton.addEventListener('click', () => {
     const flashcardTitle = document.querySelector('.flashcard-title');
-    if (titles.length > 0){
+    if (cards.length > 0){
         addOneToCompletionCountIfCardsLeft();
-        addCardToCompletedCardsArray();
-        removeCardUserKnows();
-        if(titles.length < 1){
+        markCardAsComplete();
+        if(cards.length < 1){
+            
             return flashcardTitle.innerText = 'No Cards Left';
         }
     }else{
@@ -84,18 +86,10 @@ gotItButton.addEventListener('click', () => {
     loadCardContent();
 })
 
-function removeCardUserKnows(){
-    titles.splice(cardIndex, 1);
-    defs.splice(cardIndex, 1);
-    if(cardIndex === titles.length){
-        cardIndex -= 1
-    }
+function markCardAsComplete(){
+    cards[cardIndex].completed = true;
 }
 
-function addCardToCompletedCardsArray(){
-    completedTitles.push(titles[cardIndex]);
-    completedDefs.push(defs[cardIndex]);
-}
 
 function addOneToCompletionCountIfCardsLeft(){
     completionCount.innerText = Number(completionCount.innerText) + 1;
@@ -104,8 +98,7 @@ function addOneToCompletionCountIfCardsLeft(){
 
 previousButton.addEventListener('click', () => {
     if(cardIndex > 0){
-        previousCard();
-        loadCardContent();
+        moveToPreviousUncompletedCard();
     }
 })
 
@@ -131,12 +124,35 @@ function loadCardContent(){
     flashcardDef.classList.add('hidden', 'def');
 }
 
-function nextCard(){
-    cardIndex += 1;
+// function nextCard(){
+//     cardIndex += 1;
+// }
+
+// function previousCard(){
+//     cardIndex -= 1;
+// }
+
+function moveToNextUncompletedCard(){
+    if (cards[cardIndex].completed === true || (cards[cardIndex + 1].completed === true)){
+        cardIndex += 1;
+        moveToNextUncompletedCard();
+    }else{
+        cardIndex += 1;
+        loadCardContent();
+    }
 }
 
-function previousCard(){
-    cardIndex -= 1;
+function moveToPreviousUncompletedCard() {
+	if (
+		cards[cardIndex].completed === true ||
+		cards[cardIndex - 1].completed === true
+	) {
+		cardIndex -= 1;
+		moveToNextUncompletedCard();
+	} else {
+		cardIndex -= 1;
+		loadCardContent();
+	}
 }
 
 // Hamberger Menu ###START####
@@ -146,6 +162,5 @@ function toggleHamburgerMenu(){
 }
 hamburgerMenu.addEventListener('click', () => {
     toggleHamburgerMenu();
-    // console.log(hamburgerMenu);
 })
 // Hamberger Menu ###END###
