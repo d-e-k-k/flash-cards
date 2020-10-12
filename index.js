@@ -1,3 +1,5 @@
+//https://wordsapiv1.p.mashape.com/words?random=true
+
 const flashcard = document.querySelector('#flashcard');
 const nextButton = document.querySelector('#next-button');
 const previousButton = document.querySelector('#previous-button');
@@ -71,7 +73,6 @@ nextButton.addEventListener('click', () => {
         moveToNextUncompletedCard();
         loadCardContent();
     }
-    console.log(cardIndex);
 })
 
 gotItButton.addEventListener('click', () => {
@@ -132,25 +133,10 @@ function loadCardContent(){
     flashcardDef.classList.add('hidden', 'def');
 }
 
-// function nextCard(){
-//     cardIndex += 1;
-// }
-
-// function previousCard(){
-//     cardIndex -= 1;
-// }
-
 function moveToNextUncompletedCard(){
 do{
     cardIndex += 1;
 }while (cards[cardIndex].completed === true);
-    // if (cards[cardIndex].completed === true || (cards[cardIndex + 1].completed === true)){
-    //     cardIndex += 1;
-    //     moveToNextUncompletedCard();
-    // }else{
-    //     cardIndex += 1;
-    //     loadCardContent();
-    // }
 }
 
 function moveToPreviousUncompletedCard() {
@@ -168,3 +154,24 @@ hamburgerMenu.addEventListener('click', () => {
     toggleHamburgerMenu();
 })
 // Hamberger Menu ###END###
+
+window.addEventListener('keydown', (event) => {
+    if(event.which === 39){
+        moveToNextUncompletedCard();
+        loadCardContent();
+    }else if(event.keyCode === 37){
+        moveToPreviousUncompletedCard();
+        loadCardContent();
+    }else if(event.keyCode === 40){
+        loadCardContent();
+    }else if(event.which === 38){
+       setTimeout(showDef, 100)
+       loadCardContent();
+    }
+}
+)
+
+// keycode 39 === right
+// keycode 37 === left
+// keycode 40 === down
+// keycode 38 === up
