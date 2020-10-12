@@ -119,13 +119,39 @@ ul li{
 
 /* Menu Modal START */
 #menu-options-modal{
-    background-color: rgba(107, 107, 107);
-	position: fixed;
+    background-color: rgb(179, 179, 177);
+    position: absolute;
 	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
+	right: 0;
+	height: 400px;
+	width: 300px;
 	z-index: 1;
     overflow: auto;
+    border-bottom-left-radius: 5px;
 }
 /* Menu Modal END */
+
+
+
+/* Card List Modal Start */
+.model-bg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards-list-modal {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    color: rosybrown;
+    z-index: 8;
+}
+
+/* Card List Modal END */
