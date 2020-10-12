@@ -77,23 +77,10 @@ nextButton.addEventListener('click', () => {
 gotItButton.addEventListener('click', () => {
     markCardAsComplete();
     checkAmountOfCompletedCards();
-    // console.log(cards);
-    // checkAmountComplete();
-    // console.log(cardIndex);
-    // if (cards.length > 0){
-    //     addOneToCompletionCountIfCardsLeft();
-    //     markCardAsComplete();
-    //     cards.push(cards.splice(cardIndex, 1)[0])
-    //     // moveToNextUncompletedCard();
-
-    //     if(cards.length < 1){
-            
-    //         return flashcardTitle.innerText = 'No Cards Left';
-    //     }
-    // }else{
-    //     return flashcardTitle.innerText = "No Cards Left";
-    // }
-    // loadCardContent();
+    if(cards.every(allCardsComplete) === true){
+        console.log("all cards are true");
+        alert("All cards are complete!")
+    }
 })
 
 function markCardAsComplete(){
@@ -101,8 +88,6 @@ function markCardAsComplete(){
 }
 
 function checkAmountOfCompletedCards(){
-    // look through all the cards 
-    // add one to the completed count for every card that has coompleted as true
     completionCount.innerText = 0;
     for(let i = 0; i < cards.length; i++ ){
         if(cards[i].completed === true){
@@ -111,18 +96,11 @@ function checkAmountOfCompletedCards(){
     }
 }
 
-// function checkAmountComplete(){
-//     cards.forEach(isCardCompeted);
-// }
-// function isCardCompeted(card, i){
-//     if(card[i].completed === true){
-//         completionCount.innerText = Number(completionCount.innerText) + 1;
-//     }
-// }
-// function addOneToCompletionCountIfCardsLeft(){
-//     completionCount.innerText = Number(completionCount.innerText) + 1;
-    
-// }
+function allCardsComplete(card){
+    return card.completed === true;
+}
+
+
 
 previousButton.addEventListener('click', () => {
     if(cardIndex > 0){
