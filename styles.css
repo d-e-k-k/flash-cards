@@ -4,21 +4,34 @@ html, body {
     margin: 0;
 }
 
-#menu{
-    /* background-color: blue; */
-    width: 35px;
-    height: 30px;
-    margin-top: 25px;
-    cursor: pointer;
-    margin-left: 85vw;
-    margin-top: -50px;
-    position: relative;
-    z-index: 2;
+body {
+     background-color: #97CADB;
+     font-family: 'Roboto', sans-serif;
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Permanent Marker', cursive;
+    color: #001B48;
+    text-shadow: 2px 2px #D6E8EE;
+    padding: 10px;
+}
+
+#menu{
+    width: 35px;
+    height: 5px;
+    cursor: pointer;
+    z-index: 2;
+    
+}
 
 #menu-options ul{
-    margin-top: 70px;
     list-style: none;
     padding-left: 0;
 
@@ -26,16 +39,18 @@ html, body {
 }
 
 #menu-options li{
+    background-color: #018ABE;
     line-height: 70px;
     text-align: center;
     font-size: 26px;
-    border-bottom:solid 1px black;
+    border-bottom:solid 1px #D6E8EE;
+    border-radius: 5px;
 }
 
 #menu-options a{
     text-decoration: none;
     color: black;
-     color: white;
+     color: #D6E8EE;
 }
 
 #menu-options a:hover{
@@ -45,10 +60,11 @@ html, body {
 .bar{
     height: 5px;
     width: 100%;
-    background-color: cadetblue;
+    background-color: #D6E8EE;
     display: block;
     border-radius: 5px;
     transition: 0.3s ease;
+  
 }
 
 /* Attribution: Caler Edwards https://www.youtube.com/watch?v=xMTs8tAapnQ */
@@ -56,8 +72,13 @@ html, body {
     transform: translateY(-4px);
 }
 
+#bar2{
+   
+}
+
 #bar3{
     transform: translateY(4px);
+    
 }
 
 .expanded-hamburger-menu #bar2{
@@ -92,9 +113,13 @@ nav a {
 } */
 
 #flashcard {
-    width: 40vw;
-    height: 40vw;
-
+    width: 70vw;
+    height: 75vw;
+    border-radius: 10px;
+    background-color: white;
+    margin: 20px 10px;
+    padding-top: 20px;
+    padding-right: 30px;
 }
 
 
@@ -120,21 +145,15 @@ ul li{
 /* Menu Modal START */
 #menu-options-modal{
     background-color: rgb(179, 179, 177);
-    position: absolute;
-	top: 0;
-	right: 0;
-	height: 400px;
-	width: 300px;
-	z-index: 1;
-    overflow: auto;
-    border-bottom-left-radius: 5px;
+    /* margin-top: 100px; */
+
 }
 /* Menu Modal END */
 
 
 
 /* Card List Modal Start */
-.model-bg{
+/* .model-bg{
     position: fixed;
     left: 0;
     top: 0;
@@ -152,6 +171,6 @@ ul li{
     background-color: white;
     color: rosybrown;
     z-index: 8;
-}
+} */
 
 /* Card List Modal END */
