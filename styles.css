@@ -31,10 +31,14 @@ h1{
     
 }
 
+#menu:active{
+    
+}
+
+
 #menu-options ul{
     list-style: none;
     padding-left: 0;
-
     
 }
 
@@ -45,6 +49,13 @@ h1{
     font-size: 26px;
     border-bottom:solid 1px #D6E8EE;
     border-radius: 5px;
+    /* transition-property: all;
+    transition-duration: 1000ms; */
+    
+}
+
+#menu-options li:hover{
+    background-color: #014a66;
 }
 
 #menu-options a{
@@ -156,8 +167,9 @@ nav a {
 
 .search-modal{
     position: relative;
-    display: flex;
     text-align: center;
+    display: flex;
+    align-items: center;
     padding: 10px;
     width: 300px;
     height: 250px;
@@ -183,14 +195,12 @@ form a{
     text-decoration: none;
 }
 
-form a:hover{
-    color: tomato;
-}
+
 
 
 #flashcard {
     width: 70vw;
-    height: 75vw;
+    height: 35vw;
     border-radius: 10px;
     background-color: white;
     margin: 20px 10px;
@@ -217,36 +227,3 @@ form a:hover{
 ul li{
     list-style: none;
 }
-
-/* Menu Modal START */
-#menu-options-modal{
-    background-color: rgb(179, 179, 177);
-    /* margin-top: 100px; */
-
-}
-/* Menu Modal END */
-
-
-
-/* Card List Modal Start */
-/* .model-bg{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#cards-list-modal {
-    width: 200px;
-    height: 300px;
-    background-color: white;
-    color: rosybrown;
-    z-index: 8;
-} */
-
-/* Card List Modal END */

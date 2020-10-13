@@ -11,14 +11,19 @@ randomVocabButton.addEventListener('click',(event) => {
         })
     .then(res => res.json())
     .then(resJson => {
-        if (resJson.results[0].definition)
-        console.log('there is NOT a def for this word');
-					cards.push({
-						title: resJson.word,
-						def: resJson.results[0].definition,
-						completed: false,
-                    });
+        console.log(resJson);
+        console.log(resJson.results[0].definition);
+        if (resJson.results[0].definition){
+            console.log('there is a def for this word');
+            cards.push({
+                title: resJson.word,
+                def: resJson.results[0].definition,
+                completed: false,
+            });
         updateTotalAmountOfCards();
+        }
         console.log(resJson);
     })
 })
+
+// Attribution: Rapidapi had a template for the headers that I used.

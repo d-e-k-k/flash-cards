@@ -28,7 +28,12 @@
                     <li class="menu-item"><a href="#" id="search-button">Search</a></li>
                         <div class="container-search hidden">
                             <div class="search-modal">
-
+                                <form id="add-word-form">
+                                 <h3>Add Any Word</h3>
+                                 <p>and its defintion</p>
+                                    <input type="text" placeholder="Please type a word here!" id="add-word-input" required>
+                                    <input type="submit">
+                                </form>
                             </div>
                         </div>
                     
@@ -60,11 +65,9 @@
        
     <main>
 
-        <form id="add-word-form">
-            <input type="text" placeholder="Please type a word here!" id="add-word-input" required>
-            <input  type="submit">
+
     
-        </form>
+        
         <h3><span id="completion-count">0</span> / <span id="total-number-of-cards"></span> Complete</h3>
         <div id="main-container">
             <div id="flashcard">
