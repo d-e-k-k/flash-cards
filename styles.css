@@ -220,6 +220,18 @@ form a{
     justify-content: center;
 }
 
+.button-wrapper{
+    width: 70vw;
+    height: 300px;
+}
+.control-buttons{
+    background-color: #D6E8EE;
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    margin: 10px 5px ;
+}
+
 .hidden {
     display: none;
 }
