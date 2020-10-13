@@ -156,9 +156,6 @@ nav a {
     overflow: scroll;
 }
 
-.card-title{
-  
-}
 
 .container-search{
      display: flex;
@@ -206,6 +203,7 @@ form a{
     margin: 20px 10px;
     padding-top: 20px;
     padding-right: 30px;
+    overflow: auto;
 }
 
 

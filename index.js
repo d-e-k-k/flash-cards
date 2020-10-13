@@ -11,8 +11,17 @@ const addWordForm = document.querySelector('#add-word-form');
 
 const cards = [
 	{
-		title: 'title1',
-        def: 'def1',
+		title: 'CLICK ME',
+        def: `Hey there! 
+
+        Here are some helpful tips: 
+        
+        - Click on cards to revel their definition
+
+        - Use the buttons bellow or arrow keys to go the next and previous cards
+        
+        -Click on the menu to see other neat options!
+        `,
         completed: false,
 	},
 	{
