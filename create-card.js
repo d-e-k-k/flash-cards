@@ -12,16 +12,11 @@ const newCardDef = document.querySelector('#new-card-def');
 
 createCardForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    if(newCardTitle.value === ''){
-        console.log('Card Title is missing. Please add a title');
-    }else if(newCardDef.value === ''){
-        console.log('Card is missing a definition. Please add a definition');
-    }else{
         cards.push({
             title: newCardTitle.value,
             def: newCardDef.value,
             completed: false,
             });
         updateTotalAmountOfCards();
-    }
+
 })

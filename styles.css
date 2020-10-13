@@ -111,7 +111,41 @@ nav a {
     text-decoration: none;
     color: black;
 } */
+.container-center-create-card{
+    display: flex;
+    justify-content: center;
+}
+input{
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    margin: 5px 0;
+}
 
+form a{
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+form a:hover{
+    color: tomato;
+}
+
+#create-card-modal{
+    position: relative;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    height: 250px;
+    background-color: #D6E8EE;
+    border-radius: 2px;
+}
 #flashcard {
     width: 70vw;
     height: 75vw;

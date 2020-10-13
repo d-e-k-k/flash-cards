@@ -34,16 +34,20 @@
 
        
     <main>
-
-        <div id="create-card-modal">
-            <form id="create-card-form">
-                <input type="text" placeholder="Enter Card Title Here" id="new-card-title">
-                <input type="text" placeholder="Enter Definition Here" id="new-card-def">
-                <input type="submit">
-            </form>
+        <div class="container-center-create-card hidden">
+            <div id="create-card-modal"  >
+                <form id="create-card-form">
+                    <h3>Create</h3>
+                    <p>Please type your custome title and definition below!</p>
+                    <input type="text" placeholder="Enter Card Title Here" id="new-card-title" required>
+                    <input type="text" placeholder="Enter Definition Here" id="new-card-def" required>
+                    <input type="submit">
+                    <a href="#">back</a>
+                </form>
+            </div>
         </div>
         <form id="add-word-form">
-            <input type="text" placeholder="Please type a word here!" id="add-word-input">
+            <input type="text" placeholder="Please type a word here!" id="add-word-input" required>
             <input  type="submit">
     
         </form>
