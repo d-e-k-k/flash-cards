@@ -125,11 +125,40 @@ nav a {
     height: 250px;
     background-color: #D6E8EE;
     border-radius: 2px;
+}
 
 .container-card-list {
     display: flex;
     justify-content: center;
 }
+
+#cards-list-modal {
+    position: relative;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    height: 250px;
+    background-color: #D6E8EE;
+    border-radius: 2px;
+}
+
+.container-search{
+     display: flex;
+    justify-content: center;
+}
+
+.search-modal{
+    position: relative;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    height: 250px;
+    background-color: #D6E8EE;
+    border-radius: 2px;
+}
+
 
 input{
     width: 80%;
@@ -152,7 +181,7 @@ form a:hover{
     color: tomato;
 }
 
-}
+
 #flashcard {
     width: 70vw;
     height: 75vw;

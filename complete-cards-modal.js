@@ -6,3 +6,11 @@
 //     event.preventDefault();
 //     containerCenterCardList.classList.toggle('hidden');
 // })
+
+const containerCardList = document.querySelector('.container-card-list');
+const cardListButton = document.querySelector('#card-list-button');
+
+cardListButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    containerCardList.classList.toggle('hidden');
+})

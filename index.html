@@ -24,7 +24,14 @@
             <div id="menu-options">
                 <ul>
                     <li class="menu-item"><a href="#" id="random-vocab-button">Random Word</a></li>
-                    <li><a href="#">Search</a></li>
+
+                    <li><a href="#" id="search-button">Search</a></li>
+                        <div class="container-search hidden">
+                            <div class="search-modal">
+
+                            </div>
+                        </div>
+                    
                     <li><a href="#" id="custom-button">Custom</a></li>
         <div class="container-center-custom hidden">
             <div id="create-card-modal"  >
@@ -37,7 +44,13 @@
                 </form>
             </div>
         </div>
-                    <li><a href="#" id="see-all-cards-button">Card List</a></li>
+                    <li><a href="#" id="card-list-button">Card List</a></li>
+                                <div class="container-card-list hidden">
+                                    <div id="cards-list-modal">
+                                        <ul id="cards-list-ul">
+                                        </ul>
+                                    </div>
+                                </div>
                 </ul>
             </div>
         </div>
@@ -67,17 +80,13 @@
         </div>
         
 
-        <div class="container-card-list">
-            <div id="cards-list-modal" >
-                <ul id="cards-list-ul">     
-                </ul>
-            </div>
-        </div>
+
 
     </main>
     <footer>
 
     </footer>
+<script src="./seach-word.js"></script>
 <script src="./random-vocab.js"></script>
 <script src="./create-card.js"></script>
 <script src="./index.js"></script>
