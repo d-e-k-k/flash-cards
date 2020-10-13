@@ -9,7 +9,7 @@ body {
      font-family: 'Roboto', sans-serif;
 }
 
-header{
+.header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,6 +114,10 @@ nav a {
 .container-center-create-card{
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rosybrown;
+    z-index: 3;
 }
 input{
     width: 80%;
@@ -136,13 +140,13 @@ form a:hover{
     color: tomato;
 }
 
-#create-card-modal{
+.create-card-modal{
     position: relative;
     display: flex;
     text-align: center;
     padding: 10px;
-    width: 300px;
-    height: 250px;
+    width: 400px;
+    height: 300px;
     background-color: #D6E8EE;
     border-radius: 2px;
 }
@@ -156,6 +160,14 @@ form a:hover{
     padding-right: 30px;
 }
 
+#create-card-modal p{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#create-card-modal input{
+    margin: 10px 0;
+}
 
 
 #main-container{
@@ -171,17 +183,21 @@ form a:hover{
 .hidden {
     display: none;
 }
-
+.container-center-card-list{
+    display: flex;
+    justify-content: center;
+    display: none;
+}
 ul li{
     list-style: none;
 }
 
 /* Menu Modal START */
-#menu-options-modal{
-    background-color: rgb(179, 179, 177);
+/* #menu-options-modal{
+    /* background-color: rgb(179, 179, 177); */
     /* margin-top: 100px; */
 
-}
+/* } */ 
 /* Menu Modal END */
 
 

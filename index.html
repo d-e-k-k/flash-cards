@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <div class="header">
         <h1>Flashcards</h1>
         <nav id="menu-bar">
             <div id="menu">
@@ -18,14 +18,32 @@
             </div>
             
         </nav>
-    </header>
+    </div>
+    
         <div id="menu-options-modal" class="hidden">
             <div id="menu-options">
                 <ul>
                     <li class="menu-item"><a href="#" id="random-vocab-button">Random Word</a></li>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Custom</a></li>
+                    <li><a href="#" id="search">Search</a></li>
+                    <li><a href="#" id="custom">Custom</a></li>
+                                <div class="container-center-create-card hidden">
+                                    <div class="create-card-modal">
+                                        <form id="create-card-form">
+                                            <h3>Create</h3>
+                                            <p>Please type your custome title and definition below!</p>
+                                            <input type="text" placeholder="Enter Card Title Here" id="new-card-title" required>
+                                            <input type="text" placeholder="Enter Definition Here" id="new-card-def" required>
+                                            <input type="submit">
+                                        </form>
+                                    </div>
+                                </div>
                     <li><a href="#" id="see-all-cards-button">Card List</a></li>
+                                        <div class="container-center-card-list">
+                                            <div class="create-card-modal">
+                                                <ul id="cards-list-ul">
+                                                </ul>
+                                            </div>
+                                        </div>
                 </ul>
             </div>
         </div>
@@ -33,19 +51,8 @@
 
 
        
-    <main>
-        <div class="container-center-create-card hidden">
-            <div id="create-card-modal"  >
-                <form id="create-card-form">
-                    <h3>Create</h3>
-                    <p>Please type your custome title and definition below!</p>
-                    <input type="text" placeholder="Enter Card Title Here" id="new-card-title" required>
-                    <input type="text" placeholder="Enter Definition Here" id="new-card-def" required>
-                    <input type="submit">
-                    <a href="#">back</a>
-                </form>
-            </div>
-        </div>
+   
+
         <form id="add-word-form">
             <input type="text" placeholder="Please type a word here!" id="add-word-input" required>
             <input  type="submit">
@@ -67,17 +74,10 @@
         
         <button >See All Cards </button>
 
-        <div class="model-bg">
-            <div id="cards-list-modal" >
-                <ul id="cards-list-ul">     
-                </ul>
-            </div>
-        </div>
 
-    </main>
-    <footer>
 
-    </footer>
+  
+
 <script src="./random-vocab.js"></script>
 <script src="./create-card.js"></script>
 <script src="./index.js"></script>
