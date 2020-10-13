@@ -72,7 +72,6 @@ nextButton.addEventListener('click', () => {
     if(cardIndex < cards.length -1){
         moveToNextUncompletedCard();
         loadCardContent();
-        console.log(cardIndex);
     }
 })
 
@@ -137,60 +136,24 @@ function loadCardContent(){
 function moveToNextUncompletedCard(){
    let tempArray = [...cards].splice(cardIndex + 1, cards.length);
 		if (tempArray.every(isCompleted)) {
-			console.log('all next cards are true');
 			return;
 		} else {
 			do {
 				cardIndex += 1;
 			} while (cards[cardIndex].completed === true);
 		}
-  
-    // if(cards[cardIndex + 1].completed === false){
-    //     cardIndex += 1;
-    // }else{
-    //     while (cards[cardIndex].completed === true){
-    //         cardIndex += 1;
-    //     }
-    // }
-
-
-    // do{
-    //     cardIndex += 1;
-    // }while (cards[cardIndex].completed === true);
-
 }
 
-const tempButton = document.createElement('button');
-tempButton.textContent = 'Temp Button';
-document.body.appendChild(tempButton);
-tempButton.addEventListener('click', () => {
-    console.log('temp button clicked');
-    let tempArray = [...cards].splice(0, cardIndex + 1)
-    console.log(tempArray);
-    console.log(tempArray.every(isCompleted));
-})
+
 
 function isCompleted(card){
     return card.completed === true;
 }
 
 
-// console.log(isCompleted(cards[1]));
-
-// let result = cards.every(isCompleted);
-// console.log(result);
-
 function moveToPreviousUncompletedCard() {
-    // if(cards[cardIndex - 1].completed === false){
-    //     cardIndex -= 1;
-    // }else{
-    //     while(cards[cardIndex].completed === true){
-    //         cardIndex -=1;
-    //     }
-    // }
     let tempArray = [...cards].splice(0, cardIndex);
     if (tempArray.every(isCompleted)){
-        console.log('all previous cards are true');
         return
     }else{
         do {
