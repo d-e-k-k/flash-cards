@@ -24,11 +24,6 @@ const cards = [
         `,
         completed: false,
 	},
-	{
-		title: 'title2',
-        def: 'def2',
-        completed: false,
-	},
 ];
 
 
