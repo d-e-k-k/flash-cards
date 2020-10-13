@@ -1,20 +1,8 @@
-const seeAllCardsButton = document.querySelector('#see-all-cards-button');
-const cardListUl = document.querySelector('#cards-list-ul');
-let cardListOpen = false;
+// const containerCenterCardList = document.querySelector('.card-list');
+// const cardListButton = document.querySelector('#card-list-button');
+// const cardListUl = document.querySelector('#card-list-ul');
 
-
-seeAllCardsButton.addEventListener('click', () => {
-    cardListUl.innerHTML = "";
-    if(cardListOpen === false){
-        cards.forEach((card, i) => {
-            const liCardTitle = document.createElement('li');
-            liCardTitle.innerText = cards[i].title;
-            cardListUl.appendChild(liCardTitle);
-            return cardListOpen = true;
-        })
-
-    }else{
-        return cardListOpen = false;
-    }
-
-})
+// cardListButton.addEventListener('click',(event) => {
+//     event.preventDefault();
+//     containerCenterCardList.classList.toggle('hidden');
+// })

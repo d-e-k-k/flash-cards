@@ -111,7 +111,7 @@ nav a {
     text-decoration: none;
     color: black;
 } */
-.container-center-create-card{
+container-center-create-card{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -119,6 +119,7 @@ nav a {
     background-color: rosybrown;
     z-index: 3;
 }
+
 input{
     width: 80%;
     height: 20px;
@@ -183,11 +184,7 @@ form a:hover{
 .hidden {
     display: none;
 }
-.container-center-card-list{
-    display: flex;
-    justify-content: center;
-    display: none;
-}
+
 ul li{
     list-style: none;
 }

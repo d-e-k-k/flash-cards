@@ -9,7 +9,7 @@
 
 const customButton = document.querySelector('#custom');
 const containerCenterCreateCard = document.querySelector(
-    '.container-center-create-card');
+    '#container-center-create-card');
 // const createModalBackButton = document.querySelector('#create-modal-back-button');
 const createCardForm = document.querySelector('#create-card-form');
 const newCardTitle = document.querySelector('#new-card-title');
@@ -27,8 +27,9 @@ createCardForm.addEventListener('submit', (event) => {
 
 customButton.addEventListener('click', (event) => {
     event.preventDefault();
-    containerCenterCreateCard.classList.toggle('hidden');
-    
+    containerCenterCreateCard.classList.toggle('hidden')
+    console.log(containerCenterCreateCard);
+
 })
 
 // createModalBackButton.addEventListener('click', (event) => {
