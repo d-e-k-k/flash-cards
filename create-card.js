@@ -7,10 +7,8 @@
 // forum with two input boxes and one submit 
 
 
-const customButton = document.querySelector('#custom');
-const containerCenterCreateCard = document.querySelector(
-    '#container-center-create-card');
-// const createModalBackButton = document.querySelector('#create-modal-back-button');
+const containerCenterCustom = document.querySelector('.container-center-custom');
+const customButton = document.querySelector('#custom-button');
 const createCardForm = document.querySelector('#create-card-form');
 const newCardTitle = document.querySelector('#new-card-title');
 const newCardDef = document.querySelector('#new-card-def');
@@ -27,12 +25,5 @@ createCardForm.addEventListener('submit', (event) => {
 
 customButton.addEventListener('click', (event) => {
     event.preventDefault();
-    containerCenterCreateCard.classList.toggle('hidden')
-    console.log(containerCenterCreateCard);
-
+    containerCenterCustom.classList.toggle('hidden');
 })
-
-// createModalBackButton.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     containerCenterCreateCard.classList.toggle('hidden');
-// })
