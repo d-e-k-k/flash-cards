@@ -55,15 +55,6 @@ addWordForm.addEventListener('submit', (event) => {
     
 });
 
-// randomVocabButton.addEventListener('click', () => {
-//     fetch(dictionaryUrl)
-//     .then(res => res.json())
-//     .then(resJson => {
-//         console.log(resJson);
-//     })
-    
-// })
-
 flashcard.addEventListener('click', () => {
     showDef();
 })
@@ -79,8 +70,7 @@ gotItButton.addEventListener('click', () => {
     markCardAsComplete();
     checkAmountOfCompletedCards();
     if(cards.every(allCardsComplete) === true){
-        console.log("all cards are true");
-        alert("All cards are complete!")
+        alert("All cards are complete!");
     }
 })
 
@@ -108,7 +98,6 @@ previousButton.addEventListener('click', () => {
         moveToPreviousUncompletedCard();
         loadCardContent();
     }
-    console.log(cardIndex);
 })
 
 
