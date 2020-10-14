@@ -181,12 +181,12 @@ window.addEventListener('keydown', (event) => {
     }else if(event.which === 38){
        setTimeout(showDef, 100)
        loadCardContent();
-    }else if(event.which === 32){
+    }else if(event.which === 71){
         markCardAsComplete();
 		checkAmountOfCompletedCards();
 		if (cards.every(allCardsComplete) === true) {
 			alert('All cards are complete!');
-		}
+        }
     }
 }
 )
