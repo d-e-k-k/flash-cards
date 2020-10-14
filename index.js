@@ -20,7 +20,9 @@ const cards = [
 
         - Use the buttons bellow or arrow keys to go the next and previous cards
         
-        -Click on the menu to see other neat options!
+        - Click the "GOT IT!" button or the space bar to mark the card as complete
+        
+        - Click on the menu to see other neat options!
         `,
         completed: false,
 	},
@@ -179,6 +181,12 @@ window.addEventListener('keydown', (event) => {
     }else if(event.which === 38){
        setTimeout(showDef, 100)
        loadCardContent();
+    }else if(event.which === 32){
+        markCardAsComplete();
+		checkAmountOfCompletedCards();
+		if (cards.every(allCardsComplete) === true) {
+			alert('All cards are complete!');
+		}
     }
 }
 )
