@@ -20,7 +20,7 @@ const cards = [
 
         - Use the buttons bellow or arrow keys to go the next and previous cards
         
-        - Click the "GOT IT!" button or the space bar to mark the card as complete
+        - Click the "GOT IT!" button or the "G" key to mark the card as complete
         
         - Click on the menu to see other neat options!
         `,
