@@ -144,7 +144,8 @@ nav a {
 	height: 250px;
 	background-color: #d6e8ee;
 	border-radius: 2px;
-	overflow: scroll;
+    overflow: scroll;
+    margin-bottom: 50px;
 }
 
 .container-search {
